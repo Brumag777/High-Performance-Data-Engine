@@ -25,6 +25,13 @@ Os benchmarks foram realizados num ambiente Linux de alto desempenho:
 - **Perfil do Sistema**: Modo de Desempenho
 - **Conjunto de Dados**: Grande
 
+### 📂 **Datasets**
+Devido às limitações de tamanho de ficheiro do GitHub, os conjuntos de dados completos (Normal e Large) não estão incluídos neste repositório. 
+Para testar o motor de dados, podes:
+1. **Descarregar os dados oficiais** (fornecidos no âmbito da UC de LI3).
+2. Colocar os ficheiros `.csv` dentro de uma pasta local chamada `Datasets/`.
+3. Garantir que a estrutura segue o formato esperado pelo programa: `Aircrafts.csv`, `Airports.csv`, `Flights.csv`, `Passengers.csv` e `Reservations.csv`.
+
 ## US **English**
 
 ### 🚀 **Description**
@@ -49,3 +56,10 @@ The benchmarks were performed on a high-performance Linux environment:
 - **RAM**: 16GB DDR5
 - **System Profile**: Performance Mode
 - **Dataset**: Large
+
+### 📂 **Datasets**
+Due to GitHub's file size restrictions, the full datasets (Normal and Large) are not included in this repository.
+To test the engine, you can:
+1. **Download the official data** (provided by the LI3 course).
+2. Place the `.csv` files inside a local folder named `Datasets/`.
+3. Ensure the file structure follows the expected format: `Aircrafts.csv`, `Airports.csv`, `Flights.csv`, `Passengers.csv`, and `Reservations.csv`.
