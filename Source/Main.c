@@ -18,7 +18,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include <sys/resource.h>
 #include <ctype.h>
 
 /**
