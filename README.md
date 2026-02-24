@@ -26,11 +26,15 @@ Os benchmarks foram realizados num ambiente Linux de alto desempenho:
 - **Conjunto de Dados**: Grande
 
 ### 📂 **Datasets**
-Devido às limitações de tamanho de ficheiro do GitHub, os conjuntos de dados completos (Normal e Large) não estão incluídos neste repositório. 
-Para testar o motor de dados, podes:
-1. **Descarregar os dados oficiais** (fornecidos no âmbito da UC de LI3).
-2. Colocar os ficheiros `.csv` dentro de uma pasta local chamada `Datasets/`.
-3. Garantir que a estrutura segue o formato esperado pelo programa: `Aircrafts.csv`, `Airports.csv`, `Flights.csv`, `Passengers.csv` e `Reservations.csv`.
+Para testar a performance total na sua máquina, aceda ao link a seguir e siga as instruções.
+📥 Mirror Pessoal (Google Drive)
+
+#### **Instruções**
+1. Descarregue o ficheiro .zip no link acima.
+2. Extraia o ficheiro .zip na raiz do repositório. O arquivo já contém a pasta Datasets/ formatada corretamente para o programa.
+3. Execute o comando make para compilar o motor.
+4. Execute ./Program para iniciar o processamento e análise.
+- **Nota**: Pode usar make clean para remover os ficheiros binários gerados.
 
 ## US **English**
 
@@ -58,8 +62,12 @@ The benchmarks were performed on a high-performance Linux environment:
 - **Dataset**: Large
 
 ### 📂 **Datasets**
-Due to GitHub's file size restrictions, the full datasets (Normal and Large) are not included in this repository.
-To test the engine, you can:
-1. **Download the official data** (provided by the LI3 course).
-2. Place the `.csv` files inside a local folder named `Datasets/`.
-3. Ensure the file structure follows the expected format: `Aircrafts.csv`, `Airports.csv`, `Flights.csv`, `Passengers.csv`, and `Reservations.csv`.
+To test the full performance on your machine, access the link below and follow the instructions.
+📥 Personal Mirror (Google Drive)
+
+#### **Instructions**
+1. Download the .zip file from the link above.
+2. Extract the .zip file into the repository's root directory. The archive already contains the Datasets/ folder correctly formatted for the program.
+3. Run the make command to compile the engine.
+4. Run ./Program to start the processing and analysis.
+- **Note**: You can use make clean to remove the generated binary files.
