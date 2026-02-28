@@ -42,6 +42,9 @@ typedef struct int_hash_table {
  */
 IntHashTable *createIntHashTable (int capacity) {
 
+    // Determina a capacidade ideal
+    capacity = hashIdealCapacity (capacity);
+
     // Aloca memória para a estrutura
     IntHashTable *ht = malloc (sizeof (IntHashTable));
 

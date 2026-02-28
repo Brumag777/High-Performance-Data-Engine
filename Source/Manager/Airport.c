@@ -43,11 +43,15 @@ AirportManager *createAirportManager (DatasetType dataset_type) {
     // Aloca memória para a estrutura
     AirportManager *m = malloc (sizeof (AirportManager));
 
+    // Determina o número de registos
+    int nairports = dataset_type == DATASET_NORMAL ? NORMAL_NAIRPORTS : LARGE_NAIRPORTS;
+    int nnationalities = dataset_type == DATASET_NORMAL ? NORMAL_NNATIONALITIES : LARGE_NNATIONALITIES;
+
     // Define as componentes da estrutura
-    m -> data = malloc ((dataset_type == DATASET_NORMAL ? 7355 : 7355) * sizeof (Airport));
-    m -> ht = createIntHashTable (dataset_type == DATASET_NORMAL ? POWER_OF_TWO_14 : POWER_OF_TWO_14);
-    m -> cm_by_day = createCountMatrix (dataset_type == DATASET_NORMAL ? 273 : 273, dataset_type == DATASET_NORMAL ? 7355 : 7355);
-    m -> cm_by_nationality = createCountMatrix (dataset_type == DATASET_NORMAL ? 64 : 64, dataset_type == DATASET_NORMAL ? 7355 : 7355);
+    m -> data = malloc (nairports * sizeof (Airport));
+    m -> ht = createIntHashTable (nairports);
+    m -> cm_by_day = createCountMatrix (NDAYS, nairports);
+    m -> cm_by_nationality = createCountMatrix (nnationalities, nairports);
     m -> data_len = 0;
 
     // Devolve o ponteiro

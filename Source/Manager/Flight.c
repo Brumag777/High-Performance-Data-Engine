@@ -48,10 +48,13 @@ FlightManager *createFlightManager (DatasetType dataset_type) {
 
     // Aloca memória para a estrutura
     FlightManager *m = malloc (sizeof (FlightManager));
+
+    // Determina o número de registos
+    int nflights = dataset_type == DATASET_NORMAL ? NORMAL_NFLIGHTS : LARGE_NFLIGHTS;
     
     // Define as componentes da estrutura
-    m -> data = malloc ((dataset_type == DATASET_NORMAL ? 1108700 : 5616628) * sizeof (Flight));
-    m -> ht = createIntHashTable (dataset_type == DATASET_NORMAL ? POWER_OF_TWO_21 : POWER_OF_TWO_23);
+    m -> data = malloc (nflights * sizeof (Flight));
+    m -> ht = createIntHashTable (nflights);
     m -> data_len = 0;
 
     // Devolve o ponteiro

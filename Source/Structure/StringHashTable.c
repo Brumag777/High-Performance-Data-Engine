@@ -41,6 +41,9 @@ typedef struct string_hash_table {
  */
 StringHashTable *createStringHashTable (int capacity, Boolean has_key_property) {
 
+    // Determina a capacidade ideal
+    capacity = hashIdealCapacity (capacity);
+
     // Aloca memória para a estrutura
     StringHashTable *ht = malloc (sizeof (StringHashTable));
 

@@ -71,11 +71,15 @@ PassengerManager *createPassengerManager (DatasetType dataset_type) {
 
     // Aloca memória para a estrutura
     PassengerManager *m = malloc (sizeof (PassengerManager));
+
+    // Determina o número de registos
+    int npassengers = dataset_type == DATASET_NORMAL ? NORMAL_NPASSENGERS : LARGE_NPASSENGERS;
+    int nreservations = dataset_type == DATASET_NORMAL ? NORMAL_NRESERVATIONS : LARGE_NRESERVATIONS;
     
     // Define as componentes da estrutura
-    m -> data = malloc ((dataset_type == DATASET_NORMAL ? 200000 : 2000000) * sizeof (Passenger));
-    m -> ht = createIntHashTable (dataset_type == DATASET_NORMAL ? POWER_OF_TWO_19 : POWER_OF_TWO_22);
-    m -> info_capacity = dataset_type == DATASET_NORMAL ? 40 : 40;
+    m -> data = malloc (npassengers * sizeof (Passenger));
+    m -> ht = createIntHashTable (npassengers);
+    m -> info_capacity = NWEEKS;
     m -> info = malloc (m -> info_capacity * sizeof (WeekInfo));
     m -> data_len = 0;
 
@@ -83,7 +87,7 @@ PassengerManager *createPassengerManager (DatasetType dataset_type) {
     memset (m -> info, 0, m -> info_capacity * sizeof (WeekInfo));
 
     // Aloca memória para os arrays de gastos dos passageiros
-    for (int i = 0; i < m -> info_capacity; i++) m -> info [i].sps.data = malloc ((dataset_type == DATASET_NORMAL ? 600 : 120000) * sizeof (Spending));
+    for (int i = 0; i < m -> info_capacity; i++) m -> info [i].sps.data = malloc (nreservations / NWEEKS * 1.2f * sizeof (Spending));
 
     // Devolve o ponteiro
     return m;
@@ -306,7 +310,7 @@ Passenger *getMostExpensivePassenger (PassengerManager *m, const int min_date []
     if (last_line >= m -> info_capacity) last_line = m -> info_capacity - 1;
 
     // Cria uma hash-table para contabilizar as ocorrências dos passageiros
-    IntHashTable *ht = createIntHashTable (POWER_OF_TWO_10);
+    IntHashTable *ht = createIntHashTable (POWER_OF_TWO_0);
 
     // Máximo até ao momento
     int max_dc = NO_VALUE, max_count = NO_VALUE;

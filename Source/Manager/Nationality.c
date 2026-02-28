@@ -33,9 +33,12 @@ NationalityManager *createNationalityManager (DatasetType dataset_type) {
     // Aloca memória para a estrutura
     NationalityManager *m = malloc (sizeof (NationalityManager));
 
+    // Determina o número de registos
+    int nnationalities = dataset_type == DATASET_NORMAL ? NORMAL_NNATIONALITIES : LARGE_NNATIONALITIES;
+
     // Define as componentes da estrutura
-    m -> data = malloc ((dataset_type == DATASET_NORMAL ? POWER_OF_TWO_6 : POWER_OF_TWO_6) * sizeof (Nationality));
-    m -> ht = createStringHashTable (dataset_type == DATASET_NORMAL ? POWER_OF_TWO_9 : POWER_OF_TWO_9, FALSE);
+    m -> data = malloc (nnationalities * sizeof (Nationality));
+    m -> ht = createStringHashTable (nnationalities, FALSE);
     m -> data_len = 0;
 
     // Devolve o ponteiro

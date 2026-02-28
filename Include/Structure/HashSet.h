@@ -5,6 +5,13 @@
 #include "Config.h"
 
 /**
+ * @brief Calcula a `capacidade ideal` de uma estrutura `hash`.
+ * @param real_capacity `Capacidade real` da estrutura.
+ * @return `Capacidade ideal` da estrutura.
+ */
+int hashIdealCapacity (int real_capacity);
+
+/**
  * @brief `Hash-set` indexado através de `linear probing`.
  */
 typedef struct hash_set HashSet;

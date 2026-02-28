@@ -2,6 +2,13 @@
 #define INT_HASH_TABLE_H
 
 /**
+ * @brief Calcula a `capacidade ideal` de uma estrutura `hash`.
+ * @param real_capacity `Capacidade real` da estrutura.
+ * @return `Capacidade ideal` da estrutura.
+ */
+int hashIdealCapacity (int real_capacity);
+
+/**
  * @brief `Hash-table` para armazenamento indexado através de `linear probing` e `chave inteira`.
  */
 typedef struct int_hash_table IntHashTable;

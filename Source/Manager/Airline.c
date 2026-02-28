@@ -35,9 +35,12 @@ AirlineManager *createAirlineManager (DatasetType dataset_type) {
     // Aloca memória para a estrutura
     AirlineManager *m = malloc (sizeof (AirlineManager));
 
+    // Determina o número de registos
+    int nairlines = dataset_type == DATASET_NORMAL ? NORMAL_NAIRLINES : LARGE_NAIRLINES;
+
     // Define as componentes da estrutura
-    m -> data = malloc ((dataset_type == DATASET_NORMAL ? POWER_OF_TWO_5 : POWER_OF_TWO_5) * sizeof (Airline));
-    m -> ht = createStringHashTable (dataset_type == DATASET_NORMAL ? POWER_OF_TWO_9 : POWER_OF_TWO_9, FALSE);
+    m -> data = malloc (nairlines * sizeof (Airline));
+    m -> ht = createStringHashTable (nairlines, FALSE);
     m -> data_len = 0;
 
     // Devolve o ponteiro

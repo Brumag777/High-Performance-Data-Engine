@@ -21,9 +21,12 @@ ReservationManager *createReservationManager (DatasetType dataset_type) {
 
     // Aloca memória para a estrutura
     ReservationManager *m = malloc (sizeof (ReservationManager));
+
+    // Determina o número de registos
+    int nreservations = dataset_type == DATASET_NORMAL ? NORMAL_NRESERVATIONS : LARGE_NRESERVATIONS;
     
     // Define as componentes da estrutura
-    m -> hs = createHashSet (dataset_type == DATASET_NORMAL ? POWER_OF_TWO_16 : POWER_OF_TWO_23);
+    m -> hs = createHashSet (nreservations);
 
     // Devolve o ponteiro
     return m;

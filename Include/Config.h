@@ -4,7 +4,7 @@
 /**
  * @brief `Potências de dois`.
  */
-typedef enum {
+typedef enum powers_of_two {
     POWER_OF_TWO_0 = 1,
     POWER_OF_TWO_1 = 2,
     POWER_OF_TWO_2 = 4,
@@ -32,6 +32,28 @@ typedef enum {
     POWER_OF_TWO_24 = 16777216,
     POWER_OF_TWO_25 = 33554432
 } PowersOfTwo;
+
+/**
+ * @brief `Enumeração` dos `números de registos` de cada entidade.
+ */
+typedef enum number_records {
+    NORMAL_NAIRCRAFTS = 1000,
+    NORMAL_NAIRLINES = 30,
+    NORMAL_NAIRPORTS = 7354,
+    NORMAL_NFLIGHTS = 1108699,
+    NORMAL_NNATIONALITIES = 55,
+    NORMAL_NPASSENGERS = 200000,
+    NORMAL_NRESERVATIONS = 20000,
+    LARGE_NAIRCRAFTS = 5000,
+    LARGE_NAIRLINES = 30,
+    LARGE_NAIRPORTS = 7354,
+    LARGE_NFLIGHTS = 5616627,
+    LARGE_NNATIONALITIES = 55,
+    LARGE_NPASSENGERS = 2000000,
+    LARGE_NRESERVATIONS = 4000000,
+    NDAYS = 273,
+    NWEEKS = 38
+} NumberRecords;
 
 /**
  * @brief `Booleano`.

@@ -36,9 +36,12 @@ AircraftManager *createAircraftManager (DatasetType dataset_type) {
     // Aloca memória para a estrutura
     AircraftManager *m = malloc (sizeof (AircraftManager));
 
+    // Determina o número de registos
+    int naircrafts = dataset_type == DATASET_NORMAL ? NORMAL_NAIRCRAFTS : LARGE_NAIRCRAFTS;
+
     // Define as componentes da estrutura
-    m -> data = malloc ((dataset_type == DATASET_NORMAL ? 1000 : 5000) * sizeof (Aircraft));
-    m -> ht = createStringHashTable (dataset_type == DATASET_NORMAL ? POWER_OF_TWO_12 : POWER_OF_TWO_14, FALSE);
+    m -> data = malloc (naircrafts * sizeof (Aircraft));
+    m -> ht = createStringHashTable (naircrafts, FALSE);
     m -> data_len = 0;
 
     // Devolve a estrutura

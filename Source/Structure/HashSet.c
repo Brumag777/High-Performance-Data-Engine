@@ -1,6 +1,5 @@
 // Headers utilizados
 #include "Structure/HashSet.h"
-#include "Config.h"
 
 // Bibliotecas utilizadas
 #include <stdlib.h>
@@ -34,6 +33,9 @@ typedef struct hash_set {
  * @return `Ponteiro` para o hash-set criado.
  */
 HashSet *createHashSet (int capacity) {
+
+    // Determina a capacidade ideal
+    capacity = hashIdealCapacity (capacity);
 
     // Aloca memória para a estrutura
     HashSet *hs = malloc (sizeof (HashSet));
